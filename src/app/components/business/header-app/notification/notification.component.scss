@@ -1,0 +1,24 @@
+@import "../../../../../assets/styles/variables";
+
+.#{$app-prefix}-notification {
+    align-items: center;
+    border-left: 1px solid var(--panel-phone-chat-border-color);
+    display: flex;
+    height: var(--panel-header-app-height);
+    justify-content: center;
+    padding: 0 0.2em;
+    
+    i {
+        transform: scale(1.2);
+    }
+}
+
+@media (min-width: $resolution-35em) {
+    .#{$app-prefix}-notification {
+        padding: 0 0.5em;
+
+        .name-short {
+            display: block;
+        }
+    }
+}

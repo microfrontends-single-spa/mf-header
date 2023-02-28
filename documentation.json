@@ -1,0 +1,1482 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-e37416c56167967a07dffaad9fb282234e762b9a5942663a5b588bd1ac81937b285a891f745d5f34434fcd0efb5896981e09efcefe1e47c43658db2eae9c1546",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "mf-header",
+            "styleUrls": [
+                "./app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'mf-header'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'mf-header',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.scss']\n})\nexport class AppComponent {\n  title = 'mf-header';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<router-outlet></router-outlet>\n"
+        },
+        {
+            "name": "EmptyRouteComponent",
+            "id": "component-EmptyRouteComponent-ac1c0c3e0464b5bf1187acbfef890ed4a0da1ca7d43f328ba66ec12687da1a45fe509f029b20d200dacef5e83dbe99283fe5fb7d108ad96791164420c9c27213",
+            "file": "src/app/empty-route/empty-route.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-empty-route",
+            "styleUrls": [],
+            "styles": [],
+            "template": "",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-empty-route',\n  template: '',\n})\nexport class EmptyRouteComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": ""
+        },
+        {
+            "name": "HeaderAppComponent",
+            "id": "component-HeaderAppComponent-34d56ba485a83ea07a36b986ae9de3d341b74e407165e16ee012d26e7cac9595a0b996afa834bae49c530caec5f6e2aa65a8d8e4241d9ddef0b9d59d025e809e",
+            "file": "src/app/components/business/header-app/header-app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "header-app",
+            "styleUrls": [
+                "./header-app.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./header-app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "APP_PREFIX",
+                    "defaultValue": "APP_PREFIX",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "openMenu",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\nimport { APP_PREFIX } from \"../../../constants/app.constant\";\n\n@Component({\n  selector: 'header-app',\n  templateUrl: './header-app.component.html',\n  styleUrls: ['./header-app.component.scss']\n})\nexport class HeaderAppComponent {\n  APP_PREFIX: string = APP_PREFIX;\n\n  constructor() {\n  }\n\n  openMenu() {\n    window.dispatchEvent(\n      new CustomEvent('evt-open-panel-menu', {\n        detail: {\n          isOpenMenu: false,\n        },\n      })\n    );\n  }\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./header-app.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 11
+            },
+            "templateData": "<header class=\"{{APP_PREFIX}}-container\">\n    <div class=\"header-menu\" (click)=\"openMenu()\">\n        <i class=\"fa-sharp fa-solid fa-bars\"></i>\n    </div>\n    <span></span>\n    <div class=\"header-info\">\n        <notification></notification>\n        <language></language>\n        <profile-user></profile-user>\n    </div>\n</header>"
+        },
+        {
+            "name": "LanguageComponent",
+            "id": "component-LanguageComponent-9050afd7be711a1a85ef3c4da7ff7dea50c058defd57322cef0f2b541b2259b0b61bfac3c74a099bce8dede32e8d1a8a9c90855d3f11b7cafaad315e02a315e5",
+            "file": "src/app/components/business/header-app/language/language.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "language",
+            "styleUrls": [
+                "./language.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./language.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "languages",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "[]",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "APP_PREFIX",
+                    "defaultValue": "APP_PREFIX",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20
+                },
+                {
+                    "name": "defaultLanguage",
+                    "defaultValue": "{\n      \"id\": 1,\n      \"preview\": \"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\"\n    }",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\n\nimport { APP_PREFIX } from \"../../../../constants/app.constant\";\n\n@Component({\n    selector: 'language',\n    templateUrl: './language.component.html',\n    styleUrls: ['./language.component.scss']\n  })\n  export class LanguageComponent {\n\n    @Input()\n    languages: [] = [];\n\n    defaultLanguage: any = {\n      \"id\": 1,\n      \"preview\": \"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\"\n    };\n\n    APP_PREFIX: string = APP_PREFIX;\n  }",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../../../assets/styles/variables\";\n\n.#{$app-prefix}-language {\n    align-items: center;\n    border-left: 1px solid var(--panel-phone-chat-border-color);\n    display: flex;\n    height: var(--panel-header-app-height);\n    padding: 0 0.2em;\n\n    .name-short {\n        color: var(--panel-header-app-text-font-color);\n        display: none;\n        font-size: 0.9em;\n        font-weight: bold;\n    }\n\n    .flag {\n        height: $pix-20;\n        padding: 0 0.2em;\n        width: $pix-30;\n    }\n}\n\n@media (min-width: $resolution-35em) {\n    .#{$app-prefix}-language {\n        padding: 0 0.5em;\n\n        .name-short {\n            display: block;\n        }\n    }\n}",
+                    "styleUrl": "./language.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"{{APP_PREFIX}}-language\">\n    <span class=\"name-short\">es-Es</span>\n    <div class=\"flag\">\n        <img class=\"image-fit-container\" src=\"data:image/png;base64,{{defaultLanguage?.preview}}\"/>\n    </div>\n</div>"
+        },
+        {
+            "name": "NotificationComponent",
+            "id": "component-NotificationComponent-2414e634df1e91e3b1f09578d62162aa5619cbde638fd2d90961966caaa56699a07c00adc56e5ccbbacb687201c392e8ee4aa8743ad3f251554d47502f957ba1",
+            "file": "src/app/components/business/header-app/notification/notification.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "notification",
+            "styleUrls": [
+                "./notification.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./notification.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "APP_PREFIX",
+                    "defaultValue": "APP_PREFIX",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from \"@angular/core\";\n\nimport { APP_PREFIX } from \"../../../../constants/app.constant\";\n\n@Component({\n    selector: 'notification',\n    templateUrl: './notification.component.html',\n    styleUrls: ['./notification.component.scss']\n})\nexport class NotificationComponent {\n    APP_PREFIX: string = APP_PREFIX;\n}",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../../../assets/styles/variables\";\n\n.#{$app-prefix}-notification {\n    align-items: center;\n    border-left: 1px solid var(--panel-phone-chat-border-color);\n    display: flex;\n    height: var(--panel-header-app-height);\n    justify-content: center;\n    padding: 0 0.2em;\n    \n    i {\n        transform: scale(1.2);\n    }\n}\n\n@media (min-width: $resolution-35em) {\n    .#{$app-prefix}-notification {\n        padding: 0 0.5em;\n\n        .name-short {\n            display: block;\n        }\n    }\n}",
+                    "styleUrl": "./notification.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"{{APP_PREFIX}}-notification\">\n    <i class=\"fa-regular fa-bell\"></i>\n</div>"
+        },
+        {
+            "name": "ProfileUserComponent",
+            "id": "component-ProfileUserComponent-80d982ec0b8b0c54122885eef6456085c69005227f163f8b6afc45de50465315fdac61c476e4400f13fc30a9f6e91f31c56fed7a2174be92f7c2fa001cefb015",
+            "file": "src/app/components/business/header-app/profile-user/profile-user.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "profile-user",
+            "styleUrls": [
+                "./profile-user.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./profile-user.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "APP_PREFIX",
+                    "defaultValue": "APP_PREFIX",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 11
+                },
+                {
+                    "name": "profilePhoto",
+                    "defaultValue": "'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'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 12
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\nimport { APP_PREFIX } from \"../../../../constants/app.constant\";\n\n@Component({\n  selector: 'profile-user',\n  templateUrl: './profile-user.component.html',\n  styleUrls: ['./profile-user.component.scss']\n})\nexport class ProfileUserComponent {\n    APP_PREFIX: string = APP_PREFIX;\n    profilePhoto = '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';\n\n    constructor() {\n\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@import \"../../../../../assets/styles/variables\";\n\n.#{$app-prefix}-profile-user {\n    align-items: center;\n    border-left: 1px solid var(--panel-phone-chat-border-color);\n    column-gap: 0;\n    cursor: pointer;\n    display: grid;\n    grid-template-columns: auto auto auto;\n    height: var(--panel-header-app-height);\n    justify-content: center;\n    padding: 0 0.2em;\n\n    .profile-photo {\n        height: $pix-40;\n        width: $pix-40;\n\n        img {\n            border-radius: $per-50;\n        }\n    }\n\n    .profile-user {\n        color: var(--panel-header-app-text-font-color);\n        display: none;\n        font-size: 0.7em;\n        font-weight: bold;\n    }\n}\n\n@media (min-width: $resolution-35em) {\n    .#{$app-prefix}-profile-user {\n        column-gap: 0.5em;\n        padding: 0 0.5em;\n\n        .profile-user {\n            display: block;\n        }\n    }\n}",
+                    "styleUrl": "./profile-user.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 12
+            },
+            "templateData": "<div class=\"{{APP_PREFIX}}-profile-user\">\n    <div class=\"profile-photo\">\n        <img class=\"image-fit-container\" src=\"data:image/png;base64,{{profilePhoto}}\"/>\n    </div>\n    <div class=\"profile-user\">\n        <span >LAMATCALDERON@GMAIL.COM</span>\n    </div>\n    <i class=\"fa-sharp fa-solid fa-chevron-down\"></i>\n</div>"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "id": "module-AppModule-c98d6a459a82023f4d61a950c79d2b7add035af41135a6e1681a48c4bb0d8c3832bfd2724c8f94b03649a3121d78f2d38f79a29cd921dd3347d02b3274093e7e",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { HeaderAppModule } from './components/business/header-app/header-app.module';\nimport { EmptyRouteComponent } from './empty-route/empty-route.component';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    EmptyRouteComponent\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HeaderAppModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        },
+                        {
+                            "name": "EmptyRouteComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "AppRoutingModule"
+                        },
+                        {
+                            "name": "HeaderAppModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "AppRoutingModule",
+            "id": "module-AppRoutingModule-ad3c9bc4395ea41f33feac992eca9c0249f1030fa0f2c4ad808b698500e2a522f23b3eed96bcbc2440c70b94a0a10b7ac4e6aa869628745d2820237667285b1f",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/app-routing.module.ts",
+            "methods": [],
+            "sourceCode": "import { APP_BASE_HREF } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { HeaderAppComponent } from './components/business/header-app/header-app.component';\nimport { EmptyRouteComponent } from './empty-route/empty-route.component';\n\nconst routes: Routes = [\n  {\n    path: \"**\", \n    component: HeaderAppComponent\n  }\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule],\n  providers: [{provide: APP_BASE_HREF, useValue: \"/\"}]\n})\nexport class AppRoutingModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "HeaderAppModule",
+            "id": "module-HeaderAppModule-37c080f745d6ef1434a0150361b11f11d716db85dca2d25bc107b73de5a57c2996ad336820f1995cf5b1246713552e17fe7e304b1c871a661f5bf613590bfaf1",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/business/header-app/header-app.module.ts",
+            "methods": [],
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { HeaderAppRoutes } from './header-app-routing.module';\n\nimport { HeaderAppComponent } from './header-app.component';\nimport { LanguageComponent } from \"./language/language.component\";\nimport { NotificationComponent } from \"./notification/notification.component\";\nimport { ProfileUserComponent } from \"./profile-user/profile-user.component\";\n\n@NgModule({\n  declarations: [\n    HeaderAppComponent,\n    LanguageComponent,\n    NotificationComponent,\n    ProfileUserComponent\n  ],\n  imports: [\n    HeaderAppRoutes    \n  ],\n  providers: [],\n  bootstrap: []\n})\nexport class HeaderAppModule { }\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "HeaderAppComponent"
+                        },
+                        {
+                            "name": "LanguageComponent"
+                        },
+                        {
+                            "name": "NotificationComponent"
+                        },
+                        {
+                            "name": "ProfileUserComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "APP_PREFIX",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/constants/app.constant.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "\"mf-header\""
+            },
+            {
+                "name": "AUTOR",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`Luis Amat`"
+            },
+            {
+                "name": "AUTOR",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`Luis Amat`"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Base",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "bootstrap",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.single-spa.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "lifecycles.bootstrap"
+            },
+            {
+                "name": "COMPONENT_BASE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n<div style=\"width: 100%;margin-top: 20px;\">\n    <header-app/>\n</div>`"
+            },
+            {
+                "name": "COMPONENT_BASE",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n<div style=\"min-width:150px; margin-top: 20px\">\n    <profile-user/>\n</div>`"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "HeaderAppRoutes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app-routing.module.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "RouterModule.forRoot(routes)"
+            },
+            {
+                "name": "HISTORY",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <span>[2023-01-25][Luis Amat] Creación del componente</span>\n`"
+            },
+            {
+                "name": "HISTORY",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <span>[2023-01-25][Luis Amat] Creación del componente</span>\n`"
+            },
+            {
+                "name": "lifecycles",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.single-spa.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "singleSpaAngular({\n  bootstrapFunction: singleSpaProps => {\n    singleSpaPropsSubject.next(singleSpaProps);\n    return platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule(AppModule);\n  },\n  template: '<mf-header/>',\n  Router,\n  NavigationStart,\n  NgZone,\n})"
+            },
+            {
+                "name": "mount",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.single-spa.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "lifecycles.mount"
+            },
+            {
+                "name": "PLANTILLA_HTML",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/constants/storybook.constant.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n<div class=\"storybook-contenedor\">\n    <span class=\"storybook-titulo\">$$TITULO$$</span>\n    <div class=\"storybook-cuerpo\">\n        <div>\n            <p class=\"storybook-resumen storybook-texto\">$$SUMMARY$$</p>\n            <ul class=\"storybook-propiedades\" style=\"margin-top: 20px\">\n                $$PROPS$$\n            </ul>\n            <div style=\"display:flex;align-items: center;justify-content: center;\">\n                $$COMPONENT$$\n            </div>\n            <div style=\"margin-top: 10px\">\n                <p class=\"storybook-resumen storybook-texto\"><strong>Autor:</strong> $$AUTOR$$</p>\n            </div>\n            <div class=\"storybook-historial\" style=\"margin-top: 10px\">\n                <p class=\"storybook-resumen\" style=\"margin-bottom: 10px\"><strong>Historial de modificaciones</strong></p>\n                $$HISTORY$$\n            </div>\n        </div>\n    </div>\n</div>`"
+            },
+            {
+                "name": "PROPS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    \n`"
+            },
+            {
+                "name": "PROPS",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    <li><strong>photoProfile</strong>: Imagen de la foto de perfil del usuario en formato base64</li>\n`"
+            },
+            {
+                "name": "singleSpaPropsSubject",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/single-spa/single-spa-props.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "new ReplaySubject<SingleSpaProps>(1)"
+            },
+            {
+                "name": "SUMMARY",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    El componente <strong>HEADER</strong> representa la barra superior de la aplicación, en el se definen las siguientes <strong>propiedades</strong>`"
+            },
+            {
+                "name": "SUMMARY",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`\n    El componente <strong>PROFILE-USER</strong> Representa la información del usuario logueado en el sistema, en el se definen las siguientes <strong>propiedades</strong>`"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n    props: args,\n    template: PLANTILLA_HTML.replace(\"$$TITULO$$\", `${TITULO}`).replace(\"$$SUMMARY$$\", `${SUMMARY}`).replace(\"$$PROPS$$\", `${PROPS}`).replace(\"$$COMPONENT$$\", `${COMPONENT_BASE}`).replace(\"$$AUTOR$$\", `${AUTOR}`).replace(\"$$HISTORY$$\", `${HISTORY}`)\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "(args) => ({\n    props: args,\n    template: PLANTILLA_HTML.replace(\"$$TITULO$$\", `${TITULO}`).replace(\"$$SUMMARY$$\", `${SUMMARY}`).replace(\"$$PROPS$$\", `${PROPS}`).replace(\"$$COMPONENT$$\", `${COMPONENT_BASE}`).replace(\"$$AUTOR$$\", `${AUTOR}`).replace(\"$$HISTORY$$\", `${HISTORY}`)\n})"
+            },
+            {
+                "name": "TITULO",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`HEADER`"
+            },
+            {
+                "name": "TITULO",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "`PROFILE-USER`"
+            },
+            {
+                "name": "unmount",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/main.single-spa.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "lifecycles.unmount"
+            }
+        ],
+        "functions": [
+            {
+                "name": "assetUrl",
+                "file": "src/single-spa/asset-url.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": [
+                    {
+                        "name": "url",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "returnType": "string",
+                "jsdoctags": [
+                    {
+                        "name": "url",
+                        "type": "string",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        ],
+        "typealiases": [
+            {
+                "name": "SingleSpaProps",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "src/single-spa/single-spa-props.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 187
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/app/constants/app.constant.ts": [
+                {
+                    "name": "APP_PREFIX",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/constants/app.constant.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "\"mf-header\""
+                }
+            ],
+            "src/app/components/business/header-app/header-app.component.stories.ts": [
+                {
+                    "name": "AUTOR",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`Luis Amat`"
+                },
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "COMPONENT_BASE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n<div style=\"width: 100%;margin-top: 20px;\">\n    <header-app/>\n</div>`"
+                },
+                {
+                    "name": "HISTORY",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <span>[2023-01-25][Luis Amat] Creación del componente</span>\n`"
+                },
+                {
+                    "name": "PROPS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    \n`"
+                },
+                {
+                    "name": "SUMMARY",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    El componente <strong>HEADER</strong> representa la barra superior de la aplicación, en el se definen las siguientes <strong>propiedades</strong>`"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n    props: args,\n    template: PLANTILLA_HTML.replace(\"$$TITULO$$\", `${TITULO}`).replace(\"$$SUMMARY$$\", `${SUMMARY}`).replace(\"$$PROPS$$\", `${PROPS}`).replace(\"$$COMPONENT$$\", `${COMPONENT_BASE}`).replace(\"$$AUTOR$$\", `${AUTOR}`).replace(\"$$HISTORY$$\", `${HISTORY}`)\n})"
+                },
+                {
+                    "name": "TITULO",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`HEADER`"
+                }
+            ],
+            "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts": [
+                {
+                    "name": "AUTOR",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`Luis Amat`"
+                },
+                {
+                    "name": "Base",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "COMPONENT_BASE",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n<div style=\"min-width:150px; margin-top: 20px\">\n    <profile-user/>\n</div>`"
+                },
+                {
+                    "name": "HISTORY",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <span>[2023-01-25][Luis Amat] Creación del componente</span>\n`"
+                },
+                {
+                    "name": "PROPS",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    <li><strong>photoProfile</strong>: Imagen de la foto de perfil del usuario en formato base64</li>\n`"
+                },
+                {
+                    "name": "SUMMARY",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n    El componente <strong>PROFILE-USER</strong> Representa la información del usuario logueado en el sistema, en el se definen las siguientes <strong>propiedades</strong>`"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "(args) => ({\n    props: args,\n    template: PLANTILLA_HTML.replace(\"$$TITULO$$\", `${TITULO}`).replace(\"$$SUMMARY$$\", `${SUMMARY}`).replace(\"$$PROPS$$\", `${PROPS}`).replace(\"$$COMPONENT$$\", `${COMPONENT_BASE}`).replace(\"$$AUTOR$$\", `${AUTOR}`).replace(\"$$HISTORY$$\", `${HISTORY}`)\n})"
+                },
+                {
+                    "name": "TITULO",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`PROFILE-USER`"
+                }
+            ],
+            "src/main.single-spa.ts": [
+                {
+                    "name": "bootstrap",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.single-spa.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "lifecycles.bootstrap"
+                },
+                {
+                    "name": "lifecycles",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.single-spa.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "singleSpaAngular({\n  bootstrapFunction: singleSpaProps => {\n    singleSpaPropsSubject.next(singleSpaProps);\n    return platformBrowserDynamic(getSingleSpaExtraProviders()).bootstrapModule(AppModule);\n  },\n  template: '<mf-header/>',\n  Router,\n  NavigationStart,\n  NgZone,\n})"
+                },
+                {
+                    "name": "mount",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.single-spa.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "lifecycles.mount"
+                },
+                {
+                    "name": "unmount",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/main.single-spa.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "lifecycles.unmount"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/app/components/business/header-app/header-app-routing.module.ts": [
+                {
+                    "name": "HeaderAppRoutes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/business/header-app/header-app-routing.module.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "RouterModule.forRoot(routes)"
+                }
+            ],
+            "src/app/constants/storybook.constant.ts": [
+                {
+                    "name": "PLANTILLA_HTML",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/constants/storybook.constant.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "`\n<div class=\"storybook-contenedor\">\n    <span class=\"storybook-titulo\">$$TITULO$$</span>\n    <div class=\"storybook-cuerpo\">\n        <div>\n            <p class=\"storybook-resumen storybook-texto\">$$SUMMARY$$</p>\n            <ul class=\"storybook-propiedades\" style=\"margin-top: 20px\">\n                $$PROPS$$\n            </ul>\n            <div style=\"display:flex;align-items: center;justify-content: center;\">\n                $$COMPONENT$$\n            </div>\n            <div style=\"margin-top: 10px\">\n                <p class=\"storybook-resumen storybook-texto\"><strong>Autor:</strong> $$AUTOR$$</p>\n            </div>\n            <div class=\"storybook-historial\" style=\"margin-top: 10px\">\n                <p class=\"storybook-resumen\" style=\"margin-bottom: 10px\"><strong>Historial de modificaciones</strong></p>\n                $$HISTORY$$\n            </div>\n        </div>\n    </div>\n</div>`"
+                }
+            ],
+            "src/single-spa/single-spa-props.ts": [
+                {
+                    "name": "singleSpaPropsSubject",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/single-spa/single-spa-props.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "new ReplaySubject<SingleSpaProps>(1)"
+                }
+            ]
+        },
+        "groupedFunctions": {
+            "src/single-spa/asset-url.ts": [
+                {
+                    "name": "assetUrl",
+                    "file": "src/single-spa/asset-url.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "returnType": "string",
+                    "jsdoctags": [
+                        {
+                            "name": "url",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "src/single-spa/single-spa-props.ts": [
+                {
+                    "name": "SingleSpaProps",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "src/single-spa/single-spa-props.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 187
+                }
+            ]
+        }
+    },
+    "routes": {
+        "name": "<root>",
+        "kind": "module",
+        "className": "AppModule",
+        "children": [
+            {
+                "name": "routes",
+                "filename": "src/app/app-routing.module.ts",
+                "module": "AppRoutingModule",
+                "children": [
+                    {
+                        "path": "**",
+                        "component": "HeaderAppComponent"
+                    }
+                ],
+                "kind": "module"
+            }
+        ]
+    },
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app-routing.module.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HeaderAppRoutes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AUTOR",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "COMPONENT_BASE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HISTORY",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PROPS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SUMMARY",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TITULO",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/header-app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderAppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/language/language.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "LanguageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/notification/notification.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "NotificationComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AUTOR",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Base",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "COMPONENT_BASE",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "HISTORY",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PROPS",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SUMMARY",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TITULO",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/business/header-app/profile-user/profile-user.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileUserComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/constants/app.constant.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "APP_PREFIX",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/constants/storybook.constant.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PLANTILLA_HTML",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/empty-route/empty-route.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "EmptyRouteComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.single-spa.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "bootstrap",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.single-spa.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "lifecycles",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.single-spa.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mount",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/main.single-spa.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "unmount",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/single-spa/asset-url.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "assetUrl",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/single-spa/single-spa-props.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "singleSpaPropsSubject",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

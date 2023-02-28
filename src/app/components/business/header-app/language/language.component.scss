@@ -1,0 +1,32 @@
+@import "../../../../../assets/styles/variables";
+
+.#{$app-prefix}-language {
+    align-items: center;
+    border-left: 1px solid var(--panel-phone-chat-border-color);
+    display: flex;
+    height: var(--panel-header-app-height);
+    padding: 0 0.2em;
+
+    .name-short {
+        color: var(--panel-header-app-text-font-color);
+        display: none;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+    .flag {
+        height: $pix-20;
+        padding: 0 0.2em;
+        width: $pix-30;
+    }
+}
+
+@media (min-width: $resolution-35em) {
+    .#{$app-prefix}-language {
+        padding: 0 0.5em;
+
+        .name-short {
+            display: block;
+        }
+    }
+}
